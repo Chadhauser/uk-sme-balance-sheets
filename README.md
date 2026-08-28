@@ -1,13 +1,13 @@
 # UK SME Balance Sheets and Filing Behaviour
 
 Aggregate figures from **366,209 XBRL accounts** filed at Companies House,
-covering balance sheet positions and filing timeliness for UK companies.
+covering balance sheet positions, liquidity, working capital and filing
+timeliness for UK companies.
 
 There is no published benchmark for what a small UK company's balance sheet
-normally looks like, or for how filing behaviour relates to financial position.
-This is both.
+normally looks like. This is that benchmark.
 
-## Three findings
+## Four findings
 
 ### 1. Negative net assets fall steadily with company size
 
@@ -25,7 +25,40 @@ This is both.
 More than one in five companies with no employees or a single employee has
 negative net assets. That halves by fifty staff.
 
-### 2. Companies in a weaker position file later
+### 2. The textbook current ratio is wrong for UK SMEs
+
+Standard guidance says a healthy current ratio is 2:1. The actual UK median is
+nowhere near it.
+
+| Employees | Median current ratio | Below 1.0 |
+|---|---|---|
+| 0 | 1.05 | **45.6%** |
+| 1 | 1.20 | 39.8% |
+| 2–4 | 1.27 | 38.0% |
+| 5–9 | 1.39 | 33.4% |
+| 10–19 | 1.49 | 29.2% |
+| 20–49 | 1.55 | 26.8% |
+| 50+ | **1.57** | 24.6% |
+
+Nearly half of companies with no employees have current liabilities exceeding
+current assets. Benchmarking a small company against 2:1 will mislead.
+
+### 3. Growth converts cash into debtors
+
+| Employees | Cash as % of current assets | Debtors as % |
+|---|---|---|
+| 1 | **63.1%** | 38.7% |
+| 2–4 | 54.3% | 36.6% |
+| 5–9 | 40.7% | 41.3% |
+| 10–19 | 36.0% | 45.5% |
+| 20–49 | 31.8% | 51.2% |
+| 50+ | **23.7%** | **59.5%** |
+
+A one-person company holds nearly two thirds of its current assets as cash. A
+fifty-person company holds under a quarter, with most of the rest owed by
+customers. This is why profitable businesses run short of cash as they scale.
+
+### 4. Companies in a weaker position file later
 
 | | Negative net assets | Positive net assets |
 |---|---|---|
@@ -37,14 +70,6 @@ negative net assets. That halves by fifty staff.
 Companies with negative net assets are **75% more likely to file more than a
 year after their balance sheet date**. Late filing is a signal, and this
 quantifies it.
-
-### 3. Filing lateness is largely independent of size
-
-Median days to file falls only modestly with size, from 251 days at zero
-employees to 223 at 250+. The share filing more than nine months after their
-balance sheet date sits between 17.7% and 21.9% across every band.
-
-Larger companies file marginally sooner, but not dramatically so.
 
 ## What negative net assets means, and does not mean
 
@@ -70,8 +95,8 @@ The figures are useful as a benchmark, not as a diagnosis.
   skewed by a small number of large balance sheets
 - Days to file measured as file date minus balance sheet date; filings with
   negative or implausible intervals excluded
-- Each field reports its own sample count, because not every company files every
-  figure
+- Ratios computed only where both components are present and the denominator is
+  positive, which is why sample counts differ between tables
 
 ## Important limitations
 
@@ -92,6 +117,10 @@ treated with caution.
 report very little, which is why the smallest bands have the largest gaps
 between total filings and populated fields.
 
+**The zero-employee band is mixed.** It contains dormant companies, holding
+companies and companies whose only worker is an unpaid director, which is why it
+sometimes behaves differently from the one-employee band.
+
 **No sector breakdown.** SIC codes are not included in the filing data used
 here.
 
@@ -100,6 +129,8 @@ here.
 | File | Contents |
 |---|---|
 | `uk_sme_balance_sheets_by_size.csv` | Net assets, cash, debtors, creditors, fixed and current assets by employee band, with quartiles |
+| `uk_current_ratio_by_size.csv` | Current ratio quartiles and share below 1.0 |
+| `uk_working_capital_composition_by_size.csv` | Cash and debtors as shares of current assets |
 | `uk_filing_timeliness_by_size.csv` | Days to file and lateness shares by employee band |
 | `uk_filing_timeliness_by_balance_sheet_position.csv` | Filing behaviour split by positive and negative net assets |
 
@@ -108,7 +139,7 @@ here.
 CC BY 4.0. Free to use, including commercially, with attribution.
 
 The underlying filings are public data published by Companies House under the
-Open Government Licence.
+Open Government Licence v3.0.
 
 ## Citation
 

@@ -1,0 +1,24 @@
+{
+  "upload_type": "dataset",
+  "title": "UK SME Balance Sheets and Filing Behaviour",
+  "description": "<p>Balance sheet benchmarks and filing behaviour for UK small and medium-sized companies, computed from 366,209 sets of accounts filed at Companies House.</p><p>Current ratio, net current assets and filing timeliness, broken down by employee size band.</p><p>Note on scope: figures are given per employee size band. The deposit contains no all-company median and no sector breakdown — any pooled figure must be presented as a range across bands, not as a single median.</p><p>Published by Finance Clearly, a publication of Edwards Bros (Spaldwick) Ltd.</p>",
+  "creators": [
+    {
+      "name": "Edwards, Peter",
+      "affiliation": "Finance Clearly"
+    }
+  ],
+  "keywords": [
+    "SME",
+    "balance sheet",
+    "current ratio",
+    "Companies House",
+    "United Kingdom",
+    "open data",
+    "filing behaviour",
+    "benchmarks"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng"
+}
